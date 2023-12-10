@@ -5,14 +5,15 @@ interface Review {
 }
 
 export interface Sale {
-    weekEnding: string,
-    weekEndingAsNumber?: number,
-    retailSales: number,
-    wholesaleSales: number,
-    unitsSold: number,
-    retailerMargin: number,
+    [key: string]: string | number;
+    // weekEnding: string,
+    // weekEndingAsNumber?: number,
+    // retailSales: number,
+    // wholesaleSales: number,
+    // unitsSold: number,
+    // retailerMargin: number,
 }
-interface Product {
+export interface Product {
     id: string,
     title: string,
     image: string,

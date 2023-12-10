@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import Data from './assets/product_data.model'
+import Data from '../assets/product_data.model'
 
 const initialState: {
     pending: boolean,

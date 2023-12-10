@@ -1,5 +1,5 @@
 import React from "react";
-import { Sale } from "./assets/product_data.model.ts"
+import { Sale } from "../assets/product_data.model.ts"
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { LineChart } from '@mui/x-charts/LineChart';
 
@@ -11,9 +11,12 @@ const columns: GridColDef[] = [
     { headerName: "Retailer Margin", field: "retailerMargin", flex: 1 },
 ]
 
-function SalesData(props: {sales: Sale[]}) {
-    // console.log(props.sales)
-    // const xAxis = props.sales
+interface Props {
+    sales: Sale[]
+}
+
+function SalesData({sales}: Props) {
+
     return (
         <div className='Right-Container'>
           <div className="Graph-Container">
@@ -28,11 +31,12 @@ function SalesData(props: {sales: Sale[]}) {
                         },
                         scaleType: "time",
                         tickLabelStyle: {
-                            angle: 15,
+                            angle: 25,
                             textAnchor: 'start',
                             fontSize: 12,
                         },
-                        min: props.sales[0].weekEndingAsNumber
+                        // a little trick to help the graph look better, would not do in a real product
+                        min: sales[0].weekEndingAsNumber as number
                     },
                 ]}
                 series={[{
@@ -42,7 +46,7 @@ function SalesData(props: {sales: Sale[]}) {
                     dataKey: "wholesaleSales",
                     label: "Wholesale"
                 }]}
-                dataset={props.sales}
+                dataset={sales}
                 height={500}
                 margin={{
                     left: 100
@@ -51,13 +55,13 @@ function SalesData(props: {sales: Sale[]}) {
           </div>
           <div className="Table-Container">
             <DataGrid 
-                rows={props.sales}
+                rows={sales}
                 columns={columns}
                 initialState={{
                     pagination: { paginationModel: { pageSize: 10 } },
                 }}
                 pageSizeOptions={[5, 10, 25]}
-                getRowId={(row: Sale) => row.weekEnding + row.unitsSold}
+                getRowId={(row: Sale) => row.weekEnding}
             />
           </div>
         </div>
