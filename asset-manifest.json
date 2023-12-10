@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/ramandel.github.io/stackline_assesment/static/css/main.9ef576c7.css",
+    "main.js": "/ramandel.github.io/stackline_assesment/static/js/main.047a025a.js",
+    "static/media/stackline_logo.svg": "/ramandel.github.io/stackline_assesment/static/media/stackline_logo.5935081bd899ecfe02395699e768f84e.svg",
+    "index.html": "/ramandel.github.io/stackline_assesment/index.html",
+    "main.9ef576c7.css.map": "/ramandel.github.io/stackline_assesment/static/css/main.9ef576c7.css.map",
+    "main.047a025a.js.map": "/ramandel.github.io/stackline_assesment/static/js/main.047a025a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9ef576c7.css",
+    "static/js/main.047a025a.js"
+  ]
+}
